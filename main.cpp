@@ -1,10 +1,10 @@
-#include "wymierna.hpp"
+#include "rational.hpp"
 
-using namespace obliczenia;
+using namespace calculations;
 
 int main() {
-    wymierna w = wymierna(1, 5);
-    auto w2 = wymierna(2);
+    rational w = rational(1, 5);
+    auto w2 = rational(2);
 
     std::cout << w << std::endl;
     std::cout << w + w2 << std::endl;
@@ -14,9 +14,9 @@ int main() {
     std::cout << (double) w << std::endl;
     std::cout << (int) w << std::endl;
     try {
-        std::cout << wymierna(3, 0);
+        std::cout << rational(3, 0);
     }
-    catch (wyjatek_wymierny &e) {
+    catch (rational_exception &e) {
         std::cout << e.what() << std::endl;
     }
     return 0;
